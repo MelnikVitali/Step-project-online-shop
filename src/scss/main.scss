@@ -1,0 +1,24 @@
+@import "_reset";
+@import "_fonts";
+@import "_variables";
+
+.wrapper{
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+/**************sections**********************/
+@import"sections/navbar";
+@import"sections/header";
+@import"sections/stocks";
+@import 'sections/furniture';
+@import 'sections/filter';
+@import 'sections/blog';
+@import 'sections/newsletter';
+@import 'sections/footer';
+@import 'sections/copyright';
+@import 'sections/modal';
+
+
+
+@import "media";

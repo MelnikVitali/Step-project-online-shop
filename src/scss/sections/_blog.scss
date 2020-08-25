@@ -1,0 +1,132 @@
+@import "../variables";
+/********bootstrap styles block blog__indicators******/
+.blog #blogCarousel .carousel-indicators li {
+  text-indent: 0;
+  width: 13px;
+  height: 13px;
+  border: none;
+  border-radius: 100%;
+  line-height: 13px;
+  color: $white;
+  background-color: $silver;
+  transition: 0.25s;
+}
+
+.blog #blogCarousel .carousel-indicators li.active,
+.blog #blogCarousel .carousel-indicators li:hover {
+  width: 13px;
+  height: 13px;
+  background-color: $darkOrange;
+}
+
+.blog #blogCarousel .carousel-controls .carousel-control {
+  background: $white;
+  height: 30px;
+  line-height: 30px;
+}
+
+.blog #blogCarousel .carousel-controls .carousel-control .carousel-control-next-icon i,
+.blog #blogCarousel .carousel-controls .carousel-control .carousel-control-prev-icon i {
+  box-sizing: border-box;
+  margin-top: 12px;
+  padding: 5px;
+  color: $grayBlack;
+  border: 1px solid $grayBlack;
+}
+
+.blog #blogCarousel .carousel-controls .carousel-control .carousel-control-next-icon i:hover,
+.blog #blogCarousel .carousel-controls .carousel-control .carousel-control-prev-icon i:hover {
+  background-color: $darkOrange;
+  color: $white;
+}
+/******block blog title*********/
+.blog {
+  margin-bottom: 50px;
+  &__title {
+    position: relative;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: $fontSize20;
+    color: $darkOrange;
+    padding-bottom: 13px;
+  }
+
+  &__short-line {
+    height: 3px;
+    width: 44px;
+    bottom: 0;
+    position: absolute;
+    background-color: $darkOrange;
+    margin-bottom: 10px;
+  }
+
+  &__long-line {
+    height: 3px;
+    background-color: $silver;
+    margin-bottom: 10px;
+  }
+  &__indicators{
+    margin-bottom: 10px;
+  }
+  &__card {
+    border: none;
+  }
+  &__card:hover .blog__body-title,
+  &__card:hover .blog__body-btn {
+    color: $darkOrange;
+  }
+  &__card-img {
+    height: 290px !important;
+  }
+  &__body {
+    margin: 0 auto;
+    width: 300px;
+
+  }
+  &__body-text{
+    margin-bottom: 30px;
+    font-size: $fontSize14;
+    font-weight: 400;
+    line-height: 19px;
+  }
+  &__body-title{
+    font-size: $fontSize16;
+    font-weight: 600;
+  }
+  &__body-btn {
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    background-color: $grayBlack;
+    font-size: $fontSize16;
+    line-height: 45px;
+    color: $white;
+    width: 165px;
+    height: 45px;
+    cursor: pointer;
+  }
+  &__info{
+    font-size: $fontSize13;
+    font-weight: 600;
+    background-color: $white;
+    height: 60px;
+    width: 300px;
+    margin: -60px auto 0;
+  }
+  &__info-calendar{
+    line-height: 60px;
+  }
+  &__info-comments{
+    line-height: 60px;
+  }
+  &__info-icon{
+    margin-right: 5px;
+  }
+
+
+}
+
+
+
+

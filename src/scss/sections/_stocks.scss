@@ -1,0 +1,114 @@
+@import "../variables";
+
+.stocks {
+
+  &__big-picture {
+    position: relative;
+    max-width: 555px;
+  }
+
+  &__title-container {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    right: 18px;
+    bottom: 32px;
+    background-color: $blackOpacity04;
+    color: $white;
+  }
+
+  &__big-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-weight: bold;
+    font-size: $fontSize30;
+    line-height: 30px;
+  }
+
+  &__big-subtitle {
+    font-size: $fontSize56;
+    line-height: 56px;
+    margin-bottom: 10px;
+  }
+
+  &__big-discount {
+    padding: 10px;
+    font-size: $fontSize46;
+    line-height: 36px;
+    border: 5px solid $white;
+  }
+
+  &__small-top {
+    background-color: $lightBlue;
+    max-width: 555px;
+  }
+
+  &__small-top-subtitle {
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  &__small-bottom-title {
+    color: $darkOrange;
+  }
+
+  &__small-top-price {
+    color: $darkOrange;
+  }
+
+  &__small-bottom {
+    background: $lightPink;
+    max-width: 555px;
+  }
+
+  &__small-bottom-subtitle {
+    line-height: 20px;
+    font-weight: 600;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .stocks {
+    &__small-top-container-title {
+      padding-left: 0;
+    }
+
+    &__big-title {
+      font-size: $fontSize16;
+      line-height: 16px;
+    }
+
+    &__big-subtitle {
+      font-size: $fontSize30;
+      line-height: 30px;
+      margin-bottom: 10px;
+    }
+
+    &__big-discount {
+      padding: 10px;
+      font-size: $fontSize20;
+      line-height: 20px;
+      border: 3px solid $white;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .stocks {
+    &__small-top-title {
+      font-size: $fontSize16;
+    }
+
+    &__small-top-subtitle {
+      font-size: $fontSize14;
+    }
+
+    &__small-top-price {
+      font-size: $fontSize16;
+    }
+  }
+}
+
+

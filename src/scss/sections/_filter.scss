@@ -1,0 +1,294 @@
+@import "../variables";
+
+.filter {
+  &__block {
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    font-size: $fontSize16;
+    font-weight: 600;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $grayBlack;
+  }
+
+  &__list {
+    display: block;
+  }
+
+  &__item {
+    margin-bottom: 14px;
+    font-size: $fontSize13;
+    font-weight: 400;
+  }
+
+  &__link {
+    cursor: pointer;
+    align-items: center;
+
+    &-icon {
+      padding-right: 5px;
+    }
+
+    &:hover .filter__link-text {
+      color: $darkOrange;
+    }
+
+    &:hover .filter__link-counter {
+      background-color: $darkOrange;
+    }
+  }
+
+  &__link-text {
+    transition: 0.4s;
+    color: $grayBlack;
+
+    &_active {
+      color: $darkOrange;
+    }
+  }
+
+  &__link-counter {
+    transition: 0.4s;
+    width: 24px;
+    height: 24px;
+    color: $white;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 24px;
+    background-color: $grayBlack;
+
+    &_active {
+      background-color: $darkOrange;
+    }
+  }
+
+  /****block range slider*******/
+  &__slider-element {
+    position: relative;
+  }
+
+  &__slider-wrapper {
+    margin: 10px 0;
+    height: 30px;
+  }
+
+  &__slider-line {
+    height: 8px;
+    width: 100%;
+    border: 1px solid $gray;
+    box-sizing: border-box;
+  }
+
+  &__slider-dark-line {
+    position: absolute;
+    height: 8px;
+    background-color: $black;
+    width: 100px;
+  }
+
+  &__slider-circle {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: $white;
+    border: 2px solid $darkOrange;
+    cursor: pointer;
+
+    &_second-right {
+      left: 100px;
+    }
+  }
+
+  &__slider-btn {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: $fontSize14;
+    color: $white;
+    background-color: $darkOrange;
+    display: inline;
+    padding: 10px 14px;
+  }
+
+  &__slider-input {
+    font-family: $fontsPoppins;
+    font-weight: 600;
+    width: 114px;
+    text-align: center;
+    color: $grayBlack;
+    font-size: $fontSize14;
+  }
+
+  /****block filter by color*******/
+  &__color-list {
+    margin: 30px 0;
+  }
+  &__color-item{
+    color: $grayBlack;
+    padding-bottom: 5px;
+    display: block;
+    list-style: none;
+    & label {
+      padding: 0 0 0 5px;
+      &:hover{
+        color: $darkOrange;
+      }
+    }
+    &_red{
+      color: $darkOrange;
+      & input[type=checkbox] + label:before {
+        background: $red;
+        border: 0.1rem solid $red;
+      }
+      & input[type=checkbox]:checked + label:before {
+        background-color: $red;
+        border-color: $red;
+        color: $white;
+      }
+    }
+    &_black {
+      & input[type=checkbox] + label:before {
+        background: $black;
+        border: 0.1rem solid $black;
+      }
+      & input[type=checkbox]:checked + label:before {
+        background-color: $black;
+        border-color: $black;
+        color: $white;
+      }
+    }
+
+    &_yellow {
+      & input[type=checkbox] + label:before {
+        background: $yellow;
+        border: 0.1rem solid $yellow;
+      }
+      & input[type=checkbox]:checked + label:before {
+        background-color: $yellow;
+        border-color: $yellow;
+        color: $black;
+      }
+    }
+
+    &_blue {
+      & input[type=checkbox] + label:before {
+        background: $blue;
+        border: 0.1rem solid $blue;
+      }
+      & input[type=checkbox]:checked + label:before {
+        background-color: $blue;
+        border-color: $blue;
+        color: $white;
+      }
+    }
+
+    &_pink {
+      & input[type=checkbox] + label:before {
+        background: $pink;
+        border: 0.1rem solid $pink;
+      }
+      & input[type=checkbox]:checked + label:before {
+        background-color: $pink;
+        border-color: $pink;
+        color:$white;
+      }
+    }
+
+    &_green {
+      & input[type=checkbox] + label:before {
+        background: green;
+        border: 0.1rem solid green;
+      }
+      & input[type=checkbox]:checked + label:before {
+        background-color: green;
+        border-color: green;
+        color: $white;
+      }
+    }
+  }
+  /****block filter by size*******/
+  &__link-counter:hover{
+    background-color: $darkOrange;
+  }
+  &__size-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: $fontSize13;
+     & input[type=checkbox]:checked + label{
+       color: $darkOrange;
+     }
+    & input[type=checkbox]:checked + label:before {
+      background-color: $darkOrange;
+      border-color: $darkOrange;
+      color: $white;
+    }
+    & label {
+      padding: 0 0 0 5px;
+      &:hover{
+        color: $darkOrange;
+      }
+    }
+    &_active {
+      color: $darkOrange;
+      & input[type=checkbox] + label:before {
+        background: $darkOrange;
+        border: 0.1rem solid $darkOrange;
+      }
+
+      & input[type=checkbox]:checked + label:before {
+        background-color: $darkOrange;
+        border-color: $darkOrange;
+        color: $white;
+      }
+    }
+  }
+  /****block filter by Tags*******/
+  &__tag{
+    font-size: $fontSize14;
+    padding: 10px;
+    color: $gray;
+    border: 1px solid $gray;
+    display: inline-block;
+    margin: 3px;
+    cursor: pointer;
+    &_active{
+      color: $darkOrange;
+      border: 1px solid $darkOrange;
+    }
+    &:hover{
+      @extend .filter__tag_active
+    }
+  }
+  &__tag-icon{
+    padding-right: 5px;
+  }
+}
+/**********inputs***********/
+input[type=checkbox] + label {
+  display: block;
+  margin: 0.2rem 0.2rem 0.2rem 0;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label:before {
+  content: "\2714";
+  border: 0.1rem solid #000;
+  border-radius: 0.15rem;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.7rem;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+}

@@ -1,0 +1,40 @@
+@import "../variables";
+.footer{
+  background-color: $bgFooter;
+  padding: 45px 0;
+  &__title{
+    margin-bottom: 35px;
+    font-size: $fontSize14;
+    font-weight: bolder;
+  }
+  &__link{
+    color: $grayFooterLink !important;
+    font-size: $fontSize12;
+    &:hover{
+      color: $darkOrange !important;
+    }
+  }
+  &__list{
+    margin-bottom: 45px;
+  }
+  &__pay-cards{
+    display: flex;
+  }
+  &__pay-card{
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 1.9rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 820px) {
+  .footer {
+    &__pay-card{
+      width: 1.6rem;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer__pay-cards {
+    flex-wrap: wrap;
+  }
+}

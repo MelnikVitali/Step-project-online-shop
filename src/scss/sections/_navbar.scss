@@ -1,0 +1,37 @@
+
+.nav-link {
+  border-bottom: 2px solid transparent;
+}
+.nav-link:hover {
+  border-bottom: 2px solid white;
+}
+
+.navbar--bg {
+  background-color: #434343;
+}
+
+nav {
+  font-size: 12px;
+}
+
+.br0 {
+  border-radius: 0!important;
+}
+
+.padmod {
+  padding: 0 40px;
+}
+
+.btd0 {
+  border: none !important;
+}
+
+.brdb0 {
+  border-bottom: none;
+}
+
+@media screen and (min-width: 480px) {
+  nav {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,24 @@
+@import "../variables";
+
+.copyright{
+  background-color: $grayBlack;
+  font-size:$fontSize16 ;
+  &__icon{
+    &:hover{
+      color: #d58e32 !important;
+      cursor: pointer;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .copyright{
+    font-size: $fontSize14;
+  }
+}
+@media screen and (max-width: 670px) {
+  .copyright{
+    font-size: $fontSize12;
+  }
+}
+
+

@@ -1,0 +1,21 @@
+@import "../variables";
+//modal window in the filter section
+
+.modal-header {
+  border: none;
+}
+.modal-header .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.modal #product-details img {
+  box-sizing: border-box;
+  background-color: $grayBlue;
+  height: 260px;
+  opacity: 0.7;
+}
+.modal-backdrop.show {
+  background: $bgModal;
+  opacity: 1;
+}

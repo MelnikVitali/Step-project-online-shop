@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="img/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>Online-shop</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <!---------------------sections navbar--------------------------------------->
+    <nav class="navbar navbar-expand text-white py-3 navbar--bg">
+        <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <span class="navbar-text pr-2 pr-md-4 py-0 pl-0">USD</span>
+                </li>
+                <li class="nav-item">
+                    <span class="navbar-text px-2 px-md-4 py-0">English</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white p-0 mx-2 mx-md-4" href="#">Help</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><i class="fas fa-user  navbar-brand mr-1 mr-md-2"></i></li>
+                <li class="navbar-text">
+                    <a class="nav-link text-white p-0 mr-2 mr-md-4" data-toggle="modal" href="#login-modal">Login</a>
+                </li>
+                <li class="nav-item"><i class="fas fa-lock navbar-brand mr-1 mr-md-2 ml-2 ml-md-4 "></i></li>
+                <li class="navbar-text">
+                    <a class="nav-link text-white p-0 mr-2" data-toggle="modal" href="#register-modal">Register</a>
+                </li>
+            </ul>
+            <div class="modal p-0" id="login-modal">
+                <div class="modal-dialog modal-dialog-centered ">
+                    <div class="modal-content br0 brd0">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <button type="button" class="btn btn-dark ml-auto mb-auto br0" data-dismiss="modal"><i
+                                        class="fas fa-times" style="color: white"></i></button>
+                            </div>
+                        </div>
+                        <div class="modal-header brdb0">
+                            <h4 style="color: black; font-weight: 900" class="px-4">LOGIN</h4>
+                        </div>
+                        <div class="modal-body padmod">
+                            <form action="#">
+                                <div class="form-group ">
+                                    <label>
+                                        <input type="text" class="form-control br0" placeholder="Name/Email*" required>
+                                    </label>
+                                </div>
+                                <div class="form-group ">
+                                    <label>
+                                        <input type="text" class="form-control br0" placeholder="Password" required>
+                                    </label>
+                                </div>
+                                <div class="form-group ">
+                                    <button type="submit" class="btn btn-dark br0 "
+                                            style="font-size: 11px">LOGIN
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal p-0" id="register-modal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content br0 brd0">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <button type="button" class="btn btn-dark ml-auto mb-auto br0" data-dismiss="modal"><i
+                                        class="fas fa-times" style="color: white"></i></button>
+                            </div>
+                        </div>
+                        <div class="modal-header brdb0">
+                            <h4 style="color: black; font-weight: 900" class="px-4">REGISTRATION</h4>
+                        </div>
+                        <div class="modal-body padmod">
+                            <form action="#">
+                                <div class="form-group ">
+                                    <label>
+                                        <input type="text" class="form-control br0" placeholder="Name" required>
+                                    </label>
+                                </div>
+                                <div class="form-group ">
+                                    <label>
+                                        <input type="text" class="form-control br0" placeholder="Email" required>
+                                    </label>
+                                </div>
+                                <div class="form-group ">
+                                    <label>
+                                        <input type="text" class="form-control br0" placeholder="Password" required>
+                                    </label>
+                                </div>
+                                <div class="form-group ">
+                                    <button type="submit" class="btn btn-dark br0 " style="font-size: 11px">REGISTER
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!---------------------sections header--------------------------------------->
+    <header class="header py-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="header-phone">
+                <i class="fas fa-mobile-alt d-none"></i>
+                <a href="#" class="nav-link d-inline-block text-white p-0 ml-2">2300 - 3560 - 222</a>
+            </div>
+            <img src="img/logo/logo-bazar.png" alt="" class="header__logo align-middle">
+            <div class="header-bin__wrapper position-relative d-flex align-items-center">
+                <a href="#" class="header-bin d-flex align-items-center rounded" data-toggle="modal"
+                   data-target="#shopping-bin-modal__empty"><i class="fas fa-shopping-basket ml-2"></i></a>
+                <span class="bin-count">0</span>
+            </div>
+            <div class="modal modal-empty-bin" id="shopping-bin-modal__empty">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content position-relative p-4">
+                        <div class="container mx-auto">
+                            <button type="button"
+                                    class="btn btn-dark ml-auto mb-auto br0 modal-close-btn position-absolute"
+                                    data-dismiss="modal"><i class="fas fa-times" style="color: white"></i></button>
+                            <div class="modal-header d-block border-bottom-0 text-center">
+                                <h3 class="shopping-bin-modal-title font-weight-bold">Your cart is empty</h3>
+                            </div>
+                            <div class="modal-body text-center">
+                                <p class="shopping-bin-modal-text">But it's never too late to fix it :)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!---------------------sections stocks--------------------------------------->
+    <section class="stocks container">
+        <div class="row justify-content-center">
+
+            <div class="stocks__big-picture col-md-12 col-lg-6 d-md-block my-2 p-0">
+                <img src="img/stocks/1.jpg" alt="sofa" class="stocks__sofa-img img-fluid">
+                <div class="stocks__title-container">
+					<span class="stocks__big-title">GUEST ROOM
+						<span class="stocks__big-subtitle d-block">SOFA</span>
+						<span class="stocks__big-discount d-inline-block">-20%</span>
+					</span>
+
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg my-2 ">
+                <div class="row flex-nowrap mx-auto stocks__small-top">
+
+                    <img class="img-fluid col-4" src="img/stocks/2.png" alt="chair">
+                    <div class="col-4 align-self-center stocks__small-top-container-title">
+                        <div class="font-weight-bold h4 stocks__small-top-title">OFFICE&nbsp;<span
+                                class="font-weight-normal">CHAIR</span></div>
+                        <div class="h6 stocks__small-top-subtitle">COLLECTION</div>
+                        <p class="h3 font-weight-bold stocks__small-top-price">$200.00</p>
+                    </div>
+                    <img class="img-fluid col-4" src="img/stocks/3.png" alt="chair">
+
+                </div>
+                <div class="row flex-nowrap my-3 mx-auto stocks__small-bottom">
+                    <div class="col-6">
+                        <img class="img-fluid" src="img/stocks/4.png" alt="bed">
+                    </div>
+                    <div class="col-6 align-self-center ">
+						<span class="stocks__small-bottom-title h5">
+							<span class="font-weight-bold">SPECIAL</span>
+                            COLLECTION</span>
+                        <span class="d-block stocks__small-bottom-subtitle">SAVE UP 45% OF FURNITURE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!---------------------sections furniture--------------------------------------->
+
+    <section class="container furniture">
+        <div class="row d-flex my-3 justify-content-center">
+
+            <div class="col-12 col-md-10 col-lg-9">
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="d-flex justify-content-between align-items-center furniture__menu">
+                            <h3 class="font-weight-bolder furniture__title">FURNITURE</h3>
+                            <a class="filters-btn d-lg-none cursor-pointer" data-toggle="modal"
+                               data-target="#products-filter"><i
+                                    class="fas fa-bars"></i>Filters by</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row d-flex  justify-content-center">
+                    <div class="col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/1.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/2.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/3.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/4.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/5.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/6.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/7.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/8.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/9.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/10.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/11.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/12.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/13.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/14.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/15.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/16.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                                <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                      data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/17.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                            <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                  data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/18.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                            <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                  data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/19.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                            <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                  data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-10 col-md-6 col-lg-4 my-3 furniture__box furniture__box_hidden">
+                        <div class="card my-2 furniture__card">
+                            <img src="img/products/furniture/20.png" alt="chair"
+                                 class="img-fluid card-img-top p-3 furniture__img">
+                            <div class="furniture__block-hover">
+                            <span class="pull-left furniture__text-hover" data-toggle="modal"
+                                  data-target="#product-details">Quick View</span>
+                                <div class="pull-right ml-auto furniture__basket-hover ">
+                                    <i class="fas fa-shopping-basket "></i>
+                                    <span>ADD TO CART</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <span class="furniture__sale-hover">sale</span>
+                            </a>
+                            <div class="card-body">
+                                <div class="text-center furniture__description">Aenean Ru Bristique</div>
+                                <div class="rating">
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                    <span class="rating__star rating__star_active">&#9734;</span>
+                                </div>
+                                <hr class="furniture__line">
+                                <div class="d-flex">
+                                    <i class="far fa-heart p-2 mr-1 furniture__icon-favorites"></i>
+                                    <i class="fas fa-exchange-alt p-2 furniture__icon-exchange"></i>
+                                    <span class="ml-auto furniture__price">$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-12  btn my-3 d-flex justify-content-center furniture__btn-load">
+                        <a class="" href="#">
+                            <i class="fas fa-sync furniture__load-icon" id="loadMore"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!---------------------------section filter--------------------------------------->
+            <section class="col-lg-3 d-none d-lg-block filter">
+                <div class="filter__products">
+                    <!-- block Filter By categories-->
+                    <div class="filter__block">
+                        <h3 class="filter__title">Filter By categories</h3>
+                        <ul class="filter__list">
+                            <li class="filter__item">
+                                <a href="#"
+                                   class="filter__link active d-flex justify-content-between">
+                                    <div class="filter__link-text filter__link-text_active"><i
+                                            class="fas fa-chevron-right filter__link-icon"></i>Furniture
+                                    </div>
+                                    <div class="filter__link-counter filter__link-counter_active">3</div>
+                                </a>
+                            </li>
+                            <li class="filter__item">
+                                <a href="#"
+                                   class="filter__link d-flex justify-content-between">
+                                    <div class="filter__link-text"><i
+                                            class="fas fa-chevron-right filter__link-icon"></i>Sofa
+                                    </div>
+                                    <div class="filter__link-counter">4</div>
+                                </a>
+                            </li>
+                            <li class="filter__item">
+                                <a href="#"
+                                   class="filter__link d-flex justify-content-between">
+                                    <div class="filter__link-text"><i
+                                            class="fas fa-chevron-right filter__link-icon"></i>Chaif
+                                    </div>
+                                    <div class="filter__link-counter">5</div>
+                                </a>
+                            </li>
+                            <li class="filter__item">
+                                <a href="#"
+                                   class="filter__link d-flex justify-content-between">
+                                    <div class="filter__link-text"><i
+                                            class="fas fa-chevron-right filter__link-icon"></i>Table
+                                    </div>
+                                    <div class="filter__link-counter">5</div>
+                                </a>
+                            </li>
+                            <li class="filter__item">
+                                <a href="#"
+                                   class="filter__link d-flex justify-content-between">
+                                    <div class="filter__link-text"><i
+                                            class="fas fa-chevron-right filter__link-icon"></i>Bedroom
+                                    </div>
+                                    <div class="filter__link-counter">5</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- block Filter By Price-->
+                    <div class="filter__block">
+                        <h3 class="filter__title">Filter By Price</h3>
+                        <div class="filter__range-slider">
+                            <div class="filter__slider-element">
+                                <div class="filter__slider-wrapper d-flex align-items-center">
+                                    <div class="filter__slider-line"></div>
+                                    <div class="filter__slider-dark-line"></div>
+                                    <div class="filter__slider-circle"></div>
+                                    <div class="filter__slider-circle filter__slider-circle_second-right"></div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between filter__slider-navigation">
+                                <div class="filter__slider-btn">Filter</div>
+                                <label>
+                                    <input class="filter__slider-input" type="text" value="$135-$500">
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- block Filter By Color-->
+                    <div class="filter__block">
+                        <h3 class="filter__title">Filter By Color</h3>
+                        <ul class="filter__color-list">
+                            <a href="#">
+                                <li class="filter__color-item filter__color-item_red">
+                                    <input id="red" type="checkbox" checked>
+                                    <label for="red" class="filter__label-active">Red</label>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="filter__color-item filter__color-item_black">
+                                    <input id="black" type="checkbox">
+                                    <label for="black">Black</label>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="filter__color-item filter__color-item_yellow">
+                                    <input id="yellow" type="checkbox">
+                                    <label for="yellow">Yellow</label>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="filter__color-item filter__color-item_blue">
+                                    <input id="blue" type="checkbox">
+                                    <label for="blue">Blue</label>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="filter__color-item filter__color-item_pink">
+                                    <input id="pink" type="checkbox">
+                                    <label for="pink">Pink</label>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="filter__color-item filter__color-item_green">
+                                    <input id="green" type="checkbox">
+                                    <label for="green">Green</label>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <!-- block Filter By Size-->
+                    <div class="filter__block">
+                        <h3 class="filter__title">Filter By Size</h3>
+                        <ul class="filter__size-list">
+                            <a href="#">
+                                <li class="filter__size-item filter__size-item_active">
+                                    <input id="size-S" type="checkbox" checked>
+                                    <label for="size-S" class="filter__label-size-active">S</label>
+                                    <div class="filter__link-counter filter__link-counter_active">3</div>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="filter__size-item">
+                                    <input id="size-M" type="checkbox">
+                                    <label for="size-M" class="filter__label-size-active">M</label>
+                                    <div class="filter__link-counter">4</div>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="filter__size-item">
+                                    <input id="size-L" type="checkbox">
+                                    <label for="size-L" class="filter__label-size-active">L</label>
+                                    <div class="filter__link-counter">5</div>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="filter__size-item">
+                                    <input id="size-XL" type="checkbox">
+                                    <label for="size-XL" class="filter__label-size-active">XL</label>
+                                    <div class="filter__link-counter">5</div>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="filter__size-item">
+                                    <input id="size-XX" type="checkbox">
+                                    <label for="size-XX" class="filter__label-size-active">XX</label>
+                                    <div class="filter__link-counter">5</div>
+                                </li>
+                            </a>
+
+                        </ul>
+                    </div>
+                    <!-- block Filter By Tags-->
+                    <div class="filter__block">
+                        <h3 class="filter__title">Filter By Tags</h3>
+                        <div class="tags">
+                            <div class="filter__tag filter__tag_active">
+                                <i class="fas fa-tags filter__tag-icon"></i>Table
+                            </div>
+                            <div class="filter__tag">
+                                <i class="fas fa-tags filter__tag-icon"></i>Chair
+                            </div>
+                            <div class="filter__tag">
+                                <i class="fas fa-tags filter__tag-icon"></i>Hand bag
+                            </div>
+                            <div class="filter__tag">
+                                <i class="fas fa-tags filter__tag-icon"></i>Women
+                            </div>
+                            <div class="filter__tag">
+                                <i class="fas fa-tags filter__tag-icon"></i>Fashion
+                            </div>
+                            <div class="filter__tag">
+                                <i class="fas fa-tags filter__tag-icon"></i>Clothes
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--end section filter-->
+        </div>
+    </section><!--end section furniture-->
+    <!---------------------sections Latest Blog--------------------------------------->
+    <section class="blog">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-10 col-md-10 col-lg-12 p-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+
+                                    <div class="container">
+                                        <div class="row my-4 ">
+                                            <div class="col-10 col-lg-11">
+                                                <div class="blog__wrap-title">
+                                                    <h3 class="blog__title">latest blog</h3>
+                                                    <div class="blog__long-line"></div>
+                                                    <div class="blog__short-line"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-2 col-lg-1">
+
+                                                <!-- Indicators -->
+                                                <ol class="blog__indicators carousel-indicators d-none d-md-inline-flex justify-content-between">
+                                                    <li data-slide-to="0" data-target="#blogCarousel"
+                                                        class="active blog__indicator blog__indicator_active "></li>
+                                                    <li data-slide-to="1" data-target="#blogCarousel"
+                                                        class="blog__indicator"></li>
+                                                    <li data-slide-to="2" data-target="#blogCarousel"
+                                                        class="blog__indicator"></li>
+                                                </ol>
+
+                                                <!-- Left and right controls -->
+                                                <div class="carousel-controls d-md-none">
+                                                    <a class="carousel-control mt-3 carousel-control-prev"
+                                                       href="#blogCarousel" data-slide="prev">
+                                                        <span class="carousel-control-prev-icon"><i
+                                                                class="fas fa-chevron-left"></i></span>
+                                                    </a>
+                                                    <a class="carousel-control mt-3 carousel-control-next"
+                                                       href="#blogCarousel" data-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"><i
+                                                                class="fas fa-chevron-right"></i></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-6 col-lg-4 my-lg-3 d-none d-lg-block">
+                                                        <div class="container">
+                                                            <div class="row d-flex justify-content-center">
+                                                                <div class="blog__card card">
+
+                                                                    <img class="blog__card-img card-img-top"
+                                                                         src="img/blog/1.jpg" alt="">
+
+                                                                    <div class="blog__info d-flex justify-content-around">
+                                                                        <div class="blog__info-calendar"><i
+                                                                                class="fas fa-calendar-alt blog__info-icon"></i>15 JAN
+                                                                            2016
+                                                                        </div>
+                                                                        <div class="blog__info-comments"><i
+                                                                                class="fas fa-comments blog__info-icon"></i>4 Comments
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog__body card-body">
+                                                                        <h5 class="blog__body-title card-title">Products
+                                                                            That Fight Static </h5>
+                                                                        <p class="blog__body-text card-text">Aliquam
+                                                                            dictum pellentesque nibh sit
+                                                                            amet dapibus.
+                                                                            Vivamus eget luctus nisi. Nullam euismod leo
+                                                                            vehicula, rutrum magna in,
+                                                                            ornare enim
+                                                                            vehicula, rutrum magna in, ornare enim.</p>
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <div class="blog__body-btn">Read More</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4 my-lg-3 d-none d-md-block">
+                                                        <div class="container">
+                                                            <div class="row d-flex justify-content-center">
+                                                                <div class="blog__card card">
+
+                                                                    <img class="blog__card-img card-img-top"
+                                                                         src="img/blog/2.jpg" alt="">
+
+
+                                                                    <div class="blog__info d-flex justify-content-around">
+                                                                        <div class="blog__info-calendar"><i
+                                                                                class="fas fa-calendar-alt blog__info-icon"></i>15 JAN
+                                                                            2016
+                                                                        </div>
+                                                                        <div class="blog__info-comments"><i
+                                                                                class="fas fa-comments blog__info-icon"></i>4 Comments
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog__body card-body">
+                                                                        <h5 class="blog__body-title card-title">Products
+                                                                            That Fight Static </h5>
+                                                                        <p class="blog__body-text card-text">Aliquam
+                                                                            dictum pellentesque nibh sit
+                                                                            amet dapibus.
+                                                                            Vivamus eget luctus nisi. Nullam euismod leo
+                                                                            vehicula, rutrum magna in,
+                                                                            ornare enim
+                                                                            vehicula, rutrum magna in, ornare enim.</p>
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <div class="blog__body-btn">Read More</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4 my-lg-3">
+                                                        <div class="container">
+                                                            <div class="row d-flex justify-content-center">
+                                                                <div class="blog__card card">
+
+                                                                    <img class="blog__card-img card-img-top"
+                                                                         src="img/blog/3.jpg" alt="">
+
+
+                                                                    <div class="blog__info d-flex justify-content-around">
+                                                                        <div class="blog__info-calendar"><i
+                                                                                class="fas fa-calendar-alt blog__info-icon"></i>15 JAN
+                                                                            2016
+                                                                        </div>
+                                                                        <div class="blog__info-comments"><i
+                                                                                class="fas fa-comments blog__info-icon"></i>4 Comments
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog__body card-body">
+                                                                        <h5 class="blog__body-title card-title">Products
+                                                                            That Fight Static </h5>
+                                                                        <p class="blog__body-text card-text">Aliquam
+                                                                            dictum pellentesque nibh sit
+                                                                            amet dapibus.
+                                                                            Vivamus eget luctus nisi. Nullam euismod leo
+                                                                            vehicula, rutrum magna in,
+                                                                            ornare enim
+                                                                            vehicula, rutrum magna in, ornare enim.</p>
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <div class="blog__body-btn">Read More</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-6 col-lg-4 my-lg-3  d-none d-lg-block">
+                                                        <div class="container">
+                                                            <div class="row d-flex justify-content-center">
+                                                                <div class="blog__card card">
+
+                                                                    <img class="blog__card-img card-img-top"
+                                                                         src="img/blog/1.jpg" alt="">
+
+
+                                                                    <div class="blog__info d-flex justify-content-around">
+                                                                        <div class="blog__info-calendar"><i
+                                                                                class="fas fa-calendar-alt blog__info-icon"></i>15 JAN
+                                                                            2016
+                                                                        </div>
+                                                                        <div class="blog__info-comments"><i
+                                                                                class="fas fa-comments blog__info-icon"></i>4 Comments
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog__body card-body">
+                                                                        <h5 class="blog__body-title card-title">Products
+                                                                            That Fight Static </h5>
+                                                                        <p class="blog__body-text card-text">Aliquam
+                                                                            dictum pellentesque nibh sit
+                                                                            amet dapibus.
+                                                                            Vivamus eget luctus nisi. Nullam euismod leo
+                                                                            vehicula, rutrum magna in,
+                                                                            ornare enim
+                                                                            vehicula, rutrum magna in, ornare enim.</p>
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <div class="blog__body-btn">Read More</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4 my-lg-3  d-none d-md-block">
+                                                        <div class="container">
+                                                            <div class="row d-flex justify-content-center">
+                                                                <div class="blog__card card">
+
+                                                                    <img class="blog__card-img card-img-top"
+                                                                         src="img/blog/2.jpg" alt="">
+
+
+                                                                    <div class="blog__info d-flex justify-content-around">
+                                                                        <div class="blog__info-calendar"><i
+                                                                                class="fas fa-calendar-alt blog__info-icon"></i>15 JAN
+                                                                            2016
+                                                                        </div>
+                                                                        <div class="blog__info-comments"><i
+                                                                                class="fas fa-comments blog__info-icon"></i>4 Comments
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog__body card-body">
+                                                                        <h5 class="blog__body-title card-title">Products
+                                                                            That Fight Static </h5>
+                                                                        <p class="blog__body-text card-text">Aliquam
+                                                                            dictum pellentesque nibh sit
+                                                                            amet dapibus.
+                                                                            Vivamus eget luctus nisi. Nullam euismod leo
+                                                                            vehicula, rutrum magna in,
+                                                                            ornare enim
+                                                                            vehicula, rutrum magna in, ornare enim.</p>
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <div class="blog__body-btn">Read More</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4 my-lg-3">
+                                                        <div class="container">
+                                                            <div class="row d-flex justify-content-center">
+                                                                <div class="blog__card card">
+
+                                                                    <img class="blog__card-img card-img-top"
+                                                                         src="img/blog/3.jpg" alt="">
+
+
+                                                                    <div class="blog__info d-flex justify-content-around">
+                                                                        <div class="blog__info-calendar"><i
+                                                                                class="fas fa-calendar-alt blog__info-icon"></i>15 JAN
+                                                                            2016
+                                                                        </div>
+                                                                        <div class="blog__info-comments"><i
+                                                                                class="fas fa-comments blog__info-icon"></i>4 Comments
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog__body card-body">
+                                                                        <h5 class="blog__body-title card-title">Products
+                                                                            That Fight Static </h5>
+                                                                        <p class="blog__body-text card-text">Aliquam
+                                                                            dictum pellentesque nibh sit
+                                                                            amet dapibus.
+                                                                            Vivamus eget luctus nisi. Nullam euismod leo
+                                                                            vehicula, rutrum magna in,
+                                                                            ornare enim
+                                                                            vehicula, rutrum magna in, ornare enim.</p>
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <div class="blog__body-btn">Read More</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-6 col-lg-4 my-lg-3  d-none d-lg-block">
+                                                        <div class="container">
+                                                            <div class="row d-flex justify-content-center">
+                                                                <div class="blog__card card">
+
+                                                                    <img class="blog__card-img card-img-top"
+                                                                         src="img/blog/1.jpg" alt="">
+
+
+                                                                    <div class="blog__info d-flex justify-content-around">
+                                                                        <div class="blog__info-calendar"><i
+                                                                                class="fas fa-calendar-alt blog__info-icon"></i>15 JAN
+                                                                            2016
+                                                                        </div>
+                                                                        <div class="blog__info-comments"><i
+                                                                                class="fas fa-comments blog__info-icon"></i>4 Comments
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog__body card-body">
+                                                                        <h5 class="blog__body-title card-title">Products
+                                                                            That Fight Static </h5>
+                                                                        <p class="blog__body-text card-text">Aliquam
+                                                                            dictum pellentesque nibh sit
+                                                                            amet dapibus.
+                                                                            Vivamus eget luctus nisi. Nullam euismod leo
+                                                                            vehicula, rutrum magna in,
+                                                                            ornare enim
+                                                                            vehicula, rutrum magna in, ornare enim.</p>
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <div class="blog__body-btn">Read More</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4 my-lg-3  d-none d-md-block">
+                                                        <div class="container">
+                                                            <div class="row d-flex justify-content-center">
+                                                                <div class="blog__card card">
+
+                                                                    <img class="blog__card-img card-img-top"
+                                                                         src="img/blog/2.jpg" alt="">
+
+
+                                                                    <div class="blog__info d-flex justify-content-around">
+                                                                        <div class="blog__info-calendar"><i
+                                                                                class="fas fa-calendar-alt blog__info-icon"></i>15 JAN
+                                                                            2016
+                                                                        </div>
+                                                                        <div class="blog__info-comments"><i
+                                                                                class="fas fa-comments blog__info-icon"></i>4 Comments
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog__body card-body">
+                                                                        <h5 class="blog__body-title card-title">Products
+                                                                            That Fight Static </h5>
+                                                                        <p class="blog__body-text card-text">Aliquam
+                                                                            dictum pellentesque nibh sit
+                                                                            amet dapibus.
+                                                                            Vivamus eget luctus nisi. Nullam euismod leo
+                                                                            vehicula, rutrum magna in,
+                                                                            ornare enim
+                                                                            vehicula, rutrum magna in, ornare enim.</p>
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <div class="blog__body-btn">Read More</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4 my-lg-3">
+                                                        <div class="container">
+                                                            <div class="row d-flex justify-content-center">
+                                                                <div class="blog__card card">
+
+                                                                    <img class="blog__card-img card-img-top"
+                                                                         src="img/blog/3.jpg" alt="">
+
+
+                                                                    <div class="blog__info d-flex justify-content-around">
+                                                                        <div class="blog__info-calendar"><i
+                                                                                class="fas fa-calendar-alt blog__info-icon"></i>15 JAN
+                                                                            2016
+                                                                        </div>
+                                                                        <div class="blog__info-comments"><i
+                                                                                class="fas fa-comments blog__info-icon"></i>4 Comments
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog__body card-body">
+                                                                        <h5 class="blog__body-title card-title">Products
+                                                                            That Fight Static </h5>
+                                                                        <p class="blog__body-text card-text">Aliquam
+                                                                            dictum pellentesque nibh sit
+                                                                            amet dapibus.
+                                                                            Vivamus eget luctus nisi. Nullam euismod leo
+                                                                            vehicula, rutrum magna in,
+                                                                            ornare enim
+                                                                            vehicula, rutrum magna in, ornare enim.</p>
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <div class="blog__body-btn">Read More</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---------------------------section newsletter--------------------------------------->
+    <section class="newsletter">
+        <div class="container">
+            <form>
+                <div class="form-group row justify-content-center align-items-center mb-0">
+                    <div>
+                        <label for="newsletter" class=" mt-1  font-weight-bold newsletter__title">NEWSLETTER:</label>
+                    </div>
+                    <div class="col-8">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text border-0 newsletter__wrap-icon"><i
+                                        class="fas fa-envelope"></i></div>
+                            </div>
+                            <input type="text"
+                                   class="form-control border-0 rounded-right newsletter__input"
+                                   id="newsletter" placeholder="">
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-light newsletter__btn"><i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!---------------------------section footer--------------------------------------->
+    <footer class='footer'>
+        <div class="container">
+            <div class="row">
+                <div class="footer-item footer__list col-6 col-md-3">
+                    <h4 class="text-light footer__title px-0">INFORMATION</h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link footer__link d-inline-block px-0">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link footer__link d-inline-block px-0">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link footer__link d-inline-block px-0">Conditions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link footer__link d-inline-block px-0">Online support</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item footer__list col-6 col-md-3">
+                    <h4 class="text-light footer__title px-0">MY ACCOUNT</h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">My card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">Checkout</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item col-6 col-md-3">
+                    <h4 class="text-light footer__title px-0">INFORMATION</h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">Specials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">New products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">Best seller</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">Our store</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item col-6 col-md-3">
+                    <h4 class="text-light footer__title px-0">ORDERS</h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">Payment options</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">Shipping and delivery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">Returns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link footer__link d-inline-block px-0">Shipping</a>
+                        </li>
+                        <li class="nav-item px-1 px-md-0">
+                            <div class="footer__pay-cards">
+                                <img src="img/footer/visa@1X.png" class="footer__pay-card" alt="visa-img">
+                                <img src="img/footer/mastercard@1X.png" class="footer__pay-card" alt="mastercard-img">
+                                <img src="img/footer/dacover@1X.png" class="footer__pay-card" alt="dacover-img">
+                                <img src="img/footer/blue-card@1X.png" class="footer__pay-card" alt="blue-card-img">
+                                <img src="img/footer/Layer 2@1X.png" class="footer__pay-card" alt="Layer-img">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!---------------------------section copyright--------------------------------------->
+    <section class="copyright">
+        <div class="container">
+            <div class="row flex-row d-flex justify-content-around align-items-center" style="height: 95px">
+                <div class="col-12 col-sm-12 col-xs-6 col-md-7 col-lg-8 col-xl-7 text-white-50 text-center">©Copyright
+                    2016
+                    Bazar |
+                    All Rights Reserved
+                </div>
+                <div class="col-12 col-sm-12 col-xs-6 col-md-5 col-lg-4 col-xl-5 text-white-50 copyright__icons align-self-center text-center text-md-right">
+                    <i class="fab fa-twitter m-2 copyright__icon"></i>
+                    <i class="fab fa-facebook-f m-2 copyright__icon"></i>
+                    <i class="fab fa-youtube m-2 copyright__icon"></i>
+                    <i class="fab fa-google-plus-g m-2 copyright__icon"></i>
+                    <i class="fab fa-linkedin m-2 copyright__icon"></i>
+                    <i class="fab fa-pinterest-p m-2 copyright__icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---------------------------modal filter--------------------------------------->
+    <div class="modal" id="products-filter" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="products-filter">
+                        <div class="container">
+                            <div class="row d-flex justify-content-center flex-wrap">
+
+                                <!-- block Filter By categories-->
+                                <div class="filter__block col-10 col-md-6">
+                                    <h3 class="filter__title">Filter By categories</h3>
+                                    <ul class="filter__list">
+                                        <li class="filter__item">
+                                            <a href="#"
+                                               class="filter__link active d-flex justify-content-between">
+                                                <div class="filter__link-text filter__link-text_active"><i
+                                                        class="fas fa-chevron-right filter__link-icon"></i>Furniture
+                                                </div>
+                                                <div class="filter__link-counter filter__link-counter_active">3</div>
+                                            </a>
+                                        </li>
+                                        <li class="filter__item">
+                                            <a href="#"
+                                               class="filter__link d-flex justify-content-between">
+                                                <div class="filter__link-text"><i
+                                                        class="fas fa-chevron-right filter__link-icon"></i>Sofa
+                                                </div>
+                                                <div class="filter__link-counter">4</div>
+                                            </a>
+                                        </li>
+                                        <li class="filter__item">
+                                            <a href="#"
+                                               class="filter__link d-flex justify-content-between">
+                                                <div class="filter__link-text"><i
+                                                        class="fas fa-chevron-right filter__link-icon"></i>Chaif
+                                                </div>
+                                                <div class="filter__link-counter">5</div>
+                                            </a>
+                                        </li>
+                                        <li class="filter__item">
+                                            <a href="#"
+                                               class="filter__link d-flex justify-content-between">
+                                                <div class="filter__link-text"><i
+                                                        class="fas fa-chevron-right filter__link-icon"></i>Table
+                                                </div>
+                                                <div class="filter__link-counter">5</div>
+                                            </a>
+                                        </li>
+                                        <li class="filter__item">
+                                            <a href="#"
+                                               class="filter__link d-flex justify-content-between">
+                                                <div class="filter__link-text"><i
+                                                        class="fas fa-chevron-right filter__link-icon"></i>Bedroom
+                                                </div>
+                                                <div class="filter__link-counter">5</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- block Filter By Price-->
+                                <div class="filter__block col-10 col-md-6">
+                                    <h3 class="filter__title">Filter By Price</h3>
+                                    <div class="filter__range-slider">
+                                        <div class="filter__slider-element">
+                                            <div class="filter__slider-wrapper d-flex align-items-center">
+                                                <div class="filter__slider-line"></div>
+                                                <div class="filter__slider-dark-line"></div>
+                                                <div class="filter__slider-circle"></div>
+                                                <div class="filter__slider-circle filter__slider-circle_second-right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between filter__slider-navigation">
+                                            <div class="filter__slider-btn">Filter</div>
+                                            <label>
+                                                <input class="filter__slider-input" type="text" value="$135-$500">
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- block Filter By Color-->
+                                <div class="filter__block col-10 col-md-6">
+                                    <h3 class="filter__title">Filter By Color</h3>
+                                    <ul class="filter__color-list">
+                                        <a href="#">
+                                            <li class="filter__color-item filter__color-item_red">
+                                                <input id="m-red" type="checkbox" checked>
+                                                <label for="m-red" class="filter__label-active">Red</label>
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="filter__color-item filter__color-item_black">
+                                                <input id="m-black" type="checkbox">
+                                                <label for="m-black">Black</label>
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="filter__color-item filter__color-item_yellow">
+                                                <input id="m-yellow" type="checkbox">
+                                                <label for="m-yellow">Yellow</label>
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="filter__color-item filter__color-item_blue">
+                                                <input id="m-blue" type="checkbox">
+                                                <label for="m-blue">Blue</label>
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="filter__color-item filter__color-item_pink">
+                                                <input id="m-pink" type="checkbox">
+                                                <label for="m-pink">Pink</label>
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="filter__color-item filter__color-item_green">
+                                                <input id="m-green" type="checkbox">
+                                                <label for="m-green">Green</label>
+                                            </li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <!-- block Filter By Size-->
+                                <div class="filter__block col-10 col-md-6">
+                                    <h3 class="filter__title">Filter By Size</h3>
+                                    <ul class="filter__size-list">
+                                        <a href="#">
+                                            <li class="filter__size-item filter__size-item_active">
+                                                <input id="m-size-S" type="checkbox" checked>
+                                                <label for="m-size-S" class="filter__label-size-active">S</label>
+                                                <div class="filter__link-counter filter__link-counter_active">3</div>
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="filter__size-item">
+                                                <input id="m-size-M" type="checkbox">
+                                                <label for="m-size-M" class="filter__label-size-active">M</label>
+                                                <div class="filter__link-counter">4</div>
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="filter__size-item">
+                                                <input id="m-size-L" type="checkbox">
+                                                <label for="m-size-L" class="filter__label-size-active">L</label>
+                                                <div class="filter__link-counter">5</div>
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="filter__size-item">
+                                                <input id="m-size-XL" type="checkbox">
+                                                <label for="m-size-XL" class="filter__label-size-active">XL</label>
+                                                <div class="filter__link-counter">5</div>
+                                            </li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="filter__size-item">
+                                                <input id="m-size-XX" type="checkbox">
+                                                <label for="m-size-XX" class="filter__label-size-active">XX</label>
+                                                <div class="filter__link-counter">5</div>
+                                            </li>
+                                        </a>
+
+                                    </ul>
+                                </div>
+                                <!-- block Filter By Tags-->
+                                <div class="filter__block col-10 col-md-6">
+                                    <h3 class="filter__title">Filter By Tags</h3>
+                                    <div class="tags">
+                                        <div class="filter__tag filter__tag_active">
+                                            <i class="fas fa-tags filter__tag-icon"></i>Table
+                                        </div>
+                                        <div class="filter__tag">
+                                            <i class="fas fa-tags filter__tag-icon"></i>Chair
+                                        </div>
+                                        <div class="filter__tag">
+                                            <i class="fas fa-tags filter__tag-icon"></i>Hand bag
+                                        </div>
+                                        <div class="filter__tag">
+                                            <i class="fas fa-tags filter__tag-icon"></i>Women
+                                        </div>
+                                        <div class="filter__tag">
+                                            <i class="fas fa-tags filter__tag-icon"></i>Fashion
+                                        </div>
+                                        <div class="filter__tag">
+                                            <i class="fas fa-tags filter__tag-icon"></i>Clothes
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- javascript -->
+<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
+
+</body>
+</html>
